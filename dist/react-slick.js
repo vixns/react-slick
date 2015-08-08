@@ -766,14 +766,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (_this.props.afterChange) {
 	          _this.props.afterChange(currentSlide);
 	        }
-	        _reactLibReactTransitionEvents2['default'].removeEndEventListener(_this.refs.track.children[currentSlide], callback);
+	        _reactLibReactTransitionEvents2['default'].removeEndEventListener(_reactDom2['default'].findDOMNode(_this.refs.track).children[currentSlide], callback);
 	      };
 
 	      this.setState({
 	        animating: true,
 	        currentSlide: targetSlide
 	      }, function () {
-	        _reactLibReactTransitionEvents2['default'].addEndEventListener(this.refs.track.children[currentSlide], callback);
+	        _reactLibReactTransitionEvents2['default'].addEndEventListener(_reactDom2['default'].findDOMNode(this.refs.track).children[currentSlide], callback);
 	      });
 
 	      this.autoPlay();
@@ -864,7 +864,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (_this.props.afterChange) {
 	          _this.props.afterChange(currentSlide);
 	        }
-	        _reactLibReactTransitionEvents2['default'].removeEndEventListener(_this.refs.track, callback);
+	        _reactLibReactTransitionEvents2['default'].removeEndEventListener(_reactDom2['default'].findDOMNode(_this.refs.track), callback);
 	      };
 
 	      this.setState({
@@ -872,7 +872,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        currentSlide: targetSlide,
 	        trackStyle: (0, _trackHelper.getTrackAnimateCSS)((0, _objectAssign2['default'])({ left: targetLeft }, this.props, this.state))
 	      }, function () {
-	        _reactLibReactTransitionEvents2['default'].addEndEventListener(this.refs.track, callback);
+	        _reactLibReactTransitionEvents2['default'].addEndEventListener(_reactDom2['default'].findDOMNode(this.refs.track), callback);
 	      });
 	    }
 
